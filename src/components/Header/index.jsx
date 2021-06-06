@@ -1,4 +1,6 @@
 import { createUseStyles } from 'react-jss';
+
+import Link from '../Link';
 import Typography from '../Typography';
 
 const useStyles = createUseStyles((theme) => ({
@@ -25,14 +27,13 @@ const Header = () => {
     <header className={classes.root}>
       <Typography component='h1'>React Starter</Typography>
       <nav>
-        <a
-          className={classes.link}
-          href='https://github.com'
-          target='_blank'
-          rel='noopener noreferrer'
+        <Link
+          external
+          href='https://github.com/neilvmorrison/react-starter'
+          color='secondary'
         >
-          View Repo
-        </a>
+          Link to Repo
+        </Link>
       </nav>
     </header>
   );

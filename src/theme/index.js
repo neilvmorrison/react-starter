@@ -10,14 +10,18 @@ const defaultTheme = {
       light: primary.lighten(0.25).hex(),
       main: primary.hex(),
       dark: primary.darken(0.25).hex(),
+      contrastText: primary.luminosity() < 0.3 ? '#fff' : 'rgba(0, 0, 0, 0.87)',
     },
     secondary: {
       light: secondary.lighten(0.25).hex(),
       main: secondary.hex(),
       dark: secondary.darken(0.25).hex(),
+      contrastText:
+        secondary.luminosity() < 0.3 ? '#fff' : 'rgba(0, 0, 0, 0.87)',
     },
   },
   typography: {
+    color: 'rgba(0, 0, 0, 0.87)',
     h1: {
       margin: 0,
       color: primary.hex(),
@@ -50,7 +54,7 @@ const defaultTheme = {
     },
     p: {
       margin: 0,
-      lineHeight: '2rem',
+      lineHeight: '1.5rem',
       color: 'rgba(0, 0, 0, 0.87)',
       fontSize: '0.87rem',
     },
