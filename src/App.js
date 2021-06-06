@@ -4,8 +4,6 @@ import Header from './components/Header';
 import Router from './components/Router';
 import { API_URL } from './config/api';
 
-console.log(API_URL);
-
 axios.defaults.baseURL = API_URL;
 
 const useStyles = createUseStyles((theme) => ({
