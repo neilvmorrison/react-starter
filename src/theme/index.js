@@ -63,7 +63,7 @@ const defaultTheme = {
   shape: {
     radius: 8,
   },
-  shadow: {},
+  shadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
   breakpoints: {
     xs: 0,
     sm: 600,

@@ -1,4 +1,5 @@
 import { createUseStyles } from 'react-jss';
+import { useHistory } from 'react-router-dom';
 
 import Link from '../Link';
 import Typography from '../Typography';
@@ -11,6 +12,10 @@ const useStyles = createUseStyles((theme) => ({
     height: 55,
     borderBottom: '1px solid #dfdfdf',
     padding: `0px ${theme.spacing(2)}px`,
+    boxShadow: theme.shadow,
+  },
+  homeButton: {
+    cursor: 'pointer',
   },
   link: {
     background: theme.palette.secondary.main,
@@ -23,9 +28,17 @@ const useStyles = createUseStyles((theme) => ({
 
 const Header = () => {
   const classes = useStyles();
+  const history = useHistory();
+  const handleClick = () => history.push('/');
   return (
     <header className={classes.root}>
-      <Typography component='h1'>React Starter</Typography>
+      <Typography
+        component='h1'
+        onClick={handleClick}
+        className={classes.homeButton}
+      >
+        React Starter
+      </Typography>
       <nav>
         <Link
           external
