@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
+import { createUseStyles } from 'react-jss';
+import Header from './components/Header';
+import Router from './components/Router';
+import { API_URL } from './config/api';
+
+console.log(API_URL);
+
+axios.defaults.baseURL = API_URL;
+
+const useStyles = createUseStyles((theme) => ({
+  '@global': {
+    body: {
+      margin: 0,
+    },
+    html: {
+      fontFamily: 'sans-serif',
+    },
+  },
+}));
 
 function App() {
+  useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Header />
+      <Router />
     </div>
   );
 }
