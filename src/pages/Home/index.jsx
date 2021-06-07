@@ -1,15 +1,21 @@
 import { createUseStyles } from 'react-jss';
 
 import Typography from '../../components/Typography';
+import Button from '../../components/Button';
 
 const useStyles = createUseStyles((theme) => ({
   root: {
-    margin: `${theme.spacing(2)}px ${theme.spacing(3)}px`,
+    margin: `${theme.spacing(2)}px ${theme.spacing(4)}px`,
+  },
+  callToAction: {
+    textAlign: 'center',
+    marginTop: theme.spacing(4),
   },
 }));
 
 const Home = () => {
   const classes = useStyles();
+  const handleClick = () => alert('Clicked!');
   return (
     <main className={classes.root}>
       <Typography gutterBottom component='h1'>
@@ -26,6 +32,11 @@ const Home = () => {
         reiciendis voluptates repellendus doloribus quas excepturi blanditiis
         ratione illo nostrum quibusdam quisquam laboriosam eius eum aperiam ex.
       </Typography>
+      <div className={classes.callToAction}>
+        <Button color='primary' onClick={handleClick}>
+          Here's a Button to Click
+        </Button>
+      </div>
     </main>
   );
 };

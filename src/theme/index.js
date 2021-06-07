@@ -7,15 +7,15 @@ const secondary = Color(amber);
 const defaultTheme = {
   palette: {
     primary: {
-      light: primary.lighten(0.25).hex(),
+      light: primary.lighten(0.15).hex(),
       main: primary.hex(),
-      dark: primary.darken(0.25).hex(),
+      dark: primary.darken(0.15).hex(),
       contrastText: primary.luminosity() < 0.3 ? '#fff' : 'rgba(0, 0, 0, 0.87)',
     },
     secondary: {
-      light: secondary.lighten(0.25).hex(),
+      light: secondary.lighten(0.15).hex(),
       main: secondary.hex(),
-      dark: secondary.darken(0.25).hex(),
+      dark: secondary.darken(0.15).hex(),
       contrastText:
         secondary.luminosity() < 0.3 ? '#fff' : 'rgba(0, 0, 0, 0.87)',
     },
@@ -61,7 +61,7 @@ const defaultTheme = {
   },
   spacing: (index) => 8 * index,
   shape: {
-    radius: 8,
+    radius: 4,
   },
   shadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
   breakpoints: {
@@ -71,6 +71,7 @@ const defaultTheme = {
     lg: 1280,
     xl: 1920,
   },
+  transition: 'all 0.2s ease-in-out',
 };
 
 export default defaultTheme;

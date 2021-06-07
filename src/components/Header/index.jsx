@@ -10,9 +10,7 @@ const useStyles = createUseStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: 55,
-    borderBottom: '1px solid #dfdfdf',
-    padding: `0px ${theme.spacing(2)}px`,
-    boxShadow: theme.shadow,
+    padding: `0px ${theme.spacing(4)}px`,
   },
   homeButton: {
     cursor: 'pointer',

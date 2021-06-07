@@ -8,10 +8,13 @@ const useStyles = createUseStyles((theme) => ({
     background: 'transparent',
     color: theme.typography.color,
     textDecoration: 'none',
+    border: 'none',
     borderRadius: theme.shape.radius,
     transition: theme.transition,
+    textTransform: 'uppercase',
     '&:hover': {
       background: 'rgba(0, 0, 0, 0.15)',
+      cursor: 'pointer',
     },
   },
   primary: {
@@ -30,30 +33,28 @@ const useStyles = createUseStyles((theme) => ({
   },
 }));
 
-const Link = ({
-  external,
-  color = 'secondaryq',
-  href,
-  className: customClassName,
+const Button = ({
   children,
+  color = null,
+  onClick,
+  className: customClassName,
 }) => {
   const classes = useStyles();
   return (
-    <a
-      href={href}
-      target={external && '_blank'}
-      rel={external && 'noopener noreferrer'}
+    <button
       className={clsx(classes.root, color && classes[color], customClassName)}
+      onClick={onClick}
     >
       {children}
-    </a>
+    </button>
   );
 };
 
-Link.propTypes = {
-  external: PropTypes.bool,
+Button.propTypes = {
+  children: PropTypes.string.isRequired,
   color: PropTypes.oneOf(['primary', 'secondary', null]),
-  customClassName: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
-export default Link;
+export default Button;
